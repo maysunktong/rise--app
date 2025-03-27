@@ -1,5 +1,5 @@
-import Navigation from "./Navigation";
-import Footer from "./Layout";
+import Footer from "./Footer.jsx";
+import Navigation from './Navigation.jsx';
 
 const Layout = ({ children, setCurrentPage }) => {
   return (

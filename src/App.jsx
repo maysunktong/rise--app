@@ -1,7 +1,7 @@
-import "./index.css";
 import { useState } from "react";
+import Layout from "./components/Layout";
+import "./index.css";
 import Home from "./pages/Home";
-import Layout from "./layout";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(<Home />);

@@ -1,9 +1,9 @@
-import Home from "../../pages/Home";
-import HealthTracker from "../../pages/HealthTracker";
-import WorkoutRoom from "../../pages/WorkoutRoom";
-import BookTrainers from "../../pages/BookTrainers";
 import { useState } from "react";
-import styles from "./nav.module.css";
+import BookTrainers from "../../pages/BookTrainers";
+import HealthTracker from "../../pages/HealthTracker";
+import Home from "../../pages/Home";
+import WorkoutRoom from "../../pages/WorkoutRoom";
+import styles from "./layout.module.css";
 
 const Navigation = ({ setCurrentPage }) => {
   const [activePage, setActivePage] = useState("home");
