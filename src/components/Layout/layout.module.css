@@ -1,4 +1,4 @@
-.active {
-  color: chocolate;
-  text-decoration: underline;
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }

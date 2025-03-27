@@ -1,9 +1,9 @@
 import { useState } from "react";
-import BookTrainers from "../../pages/BookTrainers";
-import HealthTracker from "../../pages/HealthTracker";
-import Home from "../../pages/Home";
-import WorkoutRoom from "../../pages/WorkoutRoom";
-import styles from "./layout.module.css";
+import BookTrainers from "../../../pages/BookTrainers";
+import HealthTracker from "../../../pages/HealthTracker";
+import Home from "../../../pages/Home";
+import WorkoutRoom from "../../../pages/WorkoutRoom";
+import styles from "./navigation.module.css"
 
 const Navigation = ({ setCurrentPage }) => {
   const [activePage, setActivePage] = useState("home");
