@@ -1,7 +1,7 @@
 import UserImg from "../../../assets/user.svg";
 import styles from "./userModal.module.css";
 
-const UserModal = () => {
+const UserPanel = () => {
   return (
     <div className={styles.userModal}>
       <div className={styles.userImgContainer}>
@@ -12,4 +12,4 @@ const UserModal = () => {
     </div>
   );
 };
-export default UserModal;
+export default UserPanel;

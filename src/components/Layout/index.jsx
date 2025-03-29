@@ -1,10 +1,11 @@
 import Subscription from "../../pages/Subscription";
-import TrainerModal from "../Modals/TrainerModal";
-import UserModal from "../Modals/UserModal";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import styles from "./layout.module.css";
 import Navigation from "./Navigation";
+import UserPanel from '../UI/UserPanel';
+import TrainerWidget from '../UI/TrainerWidget';
+import SubscriptionWidget from '../UI/SubscriptionWidget';
 
 const Layout = ({ children, setCurrentPage }) => {
   return (
@@ -13,10 +14,10 @@ const Layout = ({ children, setCurrentPage }) => {
       <div className={styles.dashboardWrapper}>
         <div className={styles.dashboardContent}>
           <div className={styles.dashboardMenu}>
-            <UserModal />
+            <UserPanel />
             <Navigation setCurrentPage={setCurrentPage} />
-            <TrainerModal />
-            <Subscription />
+            <TrainerWidget />
+            <SubscriptionWidget />
           </div>
           <div>{children}</div>
         </div>
