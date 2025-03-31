@@ -1,11 +1,10 @@
-import Subscription from "../../pages/Subscription";
+import SubscriptionWidget from "../SubscriptionWidget";
+import TrainerWidget from "../TrainerWidget";
+import UserPanel from "../UserPanel";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import styles from "./layout.module.css";
 import Navigation from "./Navigation";
-import UserPanel from '../UI/UserPanel';
-import TrainerWidget from '../UI/TrainerWidget';
-import SubscriptionWidget from '../UI/SubscriptionWidget';
 
 const Layout = ({ children, setCurrentPage }) => {
   return (

@@ -1,0 +1,21 @@
+.userModal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userImgContainer img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userName {
+  font-size: 1.5rem;
+}
