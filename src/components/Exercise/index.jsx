@@ -10,7 +10,7 @@ const Exercise = () => {
       method: "GET",
       headers: {
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB_KEY,
+        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB,
       },
     })
       .then((response) => response.json())
@@ -31,7 +31,7 @@ const Exercise = () => {
       method: "GET",
       headers: {
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB_KEY,
+        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB,
       },
     })
       .then((response) => response.json())
