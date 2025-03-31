@@ -22,11 +22,10 @@ const Exercise = () => {
       .catch((error) => console.error("Error fetching body part list:", error));
   }, []);
 
-  const fetchExercises = () => {
-    let url = "https://exercisedb.p.rapidapi.com/exercises";
-    if (selectedBodyPart) {
-      url += `/bodyPart/${selectedBodyPart}`;
-    }
+  useEffect(() => {
+    const url = selectedBodyPart
+      ? `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${selectedBodyPart}?limit=30`
+      : "https://exercisedb.p.rapidapi.com/exercises?limit=30";
 
     fetch(url, {
       method: "GET",
@@ -42,21 +41,32 @@ const Exercise = () => {
           : console.error("Invalid exercises data", data)
       )
       .catch((error) => console.error("Error fetching exercises:", error));
-  };
+  }, [selectedBodyPart]);
 
   return (
     <div>
-      <select onChange={(e) => setSelectedBodyPart(e.target.value)}>
-        <option value="">Select Body Part</option>
+      {/* mobile filter */}
+      {/* {
+        <select onChange={(e) => setSelectedBodyPart(e.target.value)}>
+          <option value="">All Exercises</option>
+          {bodyPartList.map((bodyPart, index) => (
+            <option key={index} value={bodyPart}>
+              {bodyPart}
+            </option>
+          ))}
+        </select>
+      } */}
+
+      <ul>
+        <li onClick={() => setSelectedBodyPart("")}>All exercisees</li>
         {bodyPartList.map((bodyPart, index) => (
-          <option key={index} value={bodyPart}>
+          <li key={index} onClick={() => setSelectedBodyPart(bodyPart)}>
             {bodyPart}
-          </option>
+          </li>
         ))}
-      </select>
+      </ul>
 
-      <button onClick={fetchExercises}>Filter Exercises</button>
-
+      <h1>Exercises</h1>
       <ul>
         {exerciseList.length > 0 ? (
           exerciseList.map((exercise, index) => (
