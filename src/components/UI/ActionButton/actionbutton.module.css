@@ -1,0 +1,27 @@
+.actionButton {
+  padding: 10px 20px;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 0.5rem 0;
+}
+
+.actionButton:hover {
+  background-color: #a2afad;
+}
+
+.actionButton:active {
+  background-color: #1bc7b3;
+}
+
+.book {
+  background-color: rgb(173, 173, 173);
+}
+
+.book:hover {
+  background-color: #2a9d8f;
+}

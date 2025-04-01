@@ -1,22 +1,28 @@
 .dashboard {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 .dashboardWrapper {
   display: grid;
   grid-template-rows: 6fr 1fr;
-  height: 100%;
 }
 
 .dashboardContent {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
   padding: 2rem;
-  height: 100%;
+  width: 100%;
 }
 
 .dashboardMenu {
   display: grid;
   grid-template-rows: 1fr 2fr 2fr 1fr;
   width: 300px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
 }

@@ -18,7 +18,7 @@ const Layout = ({ children, setCurrentPage }) => {
             <TrainerWidget />
             <SubscriptionWidget />
           </div>
-          <div>{children}</div>
+          <div className={styles.content}>{children}</div>
         </div>
         <Footer />
       </div>

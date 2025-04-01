@@ -1,0 +1,45 @@
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.trainerCard {
+  width: 300px;
+  height: fit-content;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details {
+  padding: 15px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.details h2 {
+  margin: 0;
+  color: #333;
+  padding: 12px 0;
+}
+
+.details p {
+  margin: 5px 0;
+  color: #777;
+}

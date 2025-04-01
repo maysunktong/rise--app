@@ -1,75 +1,113 @@
+const sharedSpecializations = [
+  "Strength Training",
+  "Weight Loss",
+  "Nutrition Coaching",
+  "HIIT",
+  "Mobility Training",
+  "Posture Correction",
+];
+
 const TrainersData = [
-  {
-    name: "Emma Johnson",
-    yearsExperience: 8,
-    specializations: ["Strength Training", "Weight Loss", "Nutrition Coaching"],
-    image: "../assets/trainers/women1.jpg",
-  },
   {
     name: "Sophia Martinez",
     yearsExperience: 5,
-    specializations: ["Yoga", "Mobility Training", "Posture Correction"],
-    image: "../assets/trainers/women2.jpg",
-  },
-  {
-    name: "Olivia Smith",
-    yearsExperience: 6,
-    specializations: ["Pilates", "Core Strengthening", "Flexibility"],
-    image: "../assets/trainers/women3.jpg",
-  },
-  {
-    name: "Isabella Davis",
-    yearsExperience: 7,
-    specializations: ["Cardio Fitness", "HIIT", "Endurance Training"],
-    image: "../assets/trainers/women4.jpg",
-  },
-  {
-    name: "James Anderson",
-    yearsExperience: 10,
-    specializations: ["Bodybuilding", "Powerlifting", "Muscle Gain"],
-    image: "../assets/trainers/men1.jpg",
-  },
-  {
-    name: "William Brown",
-    yearsExperience: 12,
     specializations: [
-      "Strength Training",
-      "Athletic Performance",
-      "Injury Prevention",
+      sharedSpecializations[3],
+      sharedSpecializations[4],
+      sharedSpecializations[5],
     ],
-    image: "../assets/trainers/men2.jpg",
+    image: "trainers/women2.jpg",
   },
   {
     name: "Benjamin Wilson",
     yearsExperience: 9,
     specializations: [
-      "Weight Loss",
-      "Functional Training",
-      "Kettlebell Workouts",
+      sharedSpecializations[0],
+      sharedSpecializations[1],
+      sharedSpecializations[4],
     ],
-    image: "../assets/trainers/men3.jpg",
+    image: "trainers/men3.jpg",
   },
   {
     name: "Alexander Taylor",
     yearsExperience: 6,
-    specializations: ["HIIT", "Endurance Training", "Agility Training"],
-    image: "../assets/trainers/men4.jpg",
+    specializations: [
+      sharedSpecializations[2],
+      sharedSpecializations[3],
+      sharedSpecializations[5],
+    ],
+    image: "trainers/men4.jpg",
   },
+  {
+    name: "Olivia Smith",
+    yearsExperience: 6,
+    specializations: [
+      sharedSpecializations[0],
+      sharedSpecializations[2],
+      sharedSpecializations[4],
+    ],
+    image: "trainers/women3.jpg",
+  },
+  {
+    name: "Isabella Davis",
+    yearsExperience: 7,
+    specializations: [
+      sharedSpecializations[1],
+      sharedSpecializations[3],
+      sharedSpecializations[5],
+    ],
+    image: "trainers/women4.jpg",
+  },
+  {
+    name: "James Anderson",
+    yearsExperience: 10,
+    specializations: [
+      sharedSpecializations[0],
+      sharedSpecializations[2],
+      sharedSpecializations[3],
+    ],
+    image: "trainers/men1.jpg",
+  },
+  {
+    name: "William Brown",
+    yearsExperience: 12,
+    specializations: [
+      sharedSpecializations[1],
+      sharedSpecializations[3],
+      sharedSpecializations[5],
+    ],
+    image: "trainers/men2.jpg",
+  },
+
   {
     name: "Michael Harris",
     yearsExperience: 11,
     specializations: [
-      "Rehabilitation Training",
-      "Posture Correction",
-      "Mobility Training",
+      sharedSpecializations[0],
+      sharedSpecializations[4],
+      sharedSpecializations[5],
     ],
-    image: "../assets/trainers/men5.jpg",
+    image: "trainers/men5.jpg",
+  },
+  {
+    name: "Emma Johnson",
+    yearsExperience: 8,
+    specializations: [
+      sharedSpecializations[0],
+      sharedSpecializations[1],
+      sharedSpecializations[2],
+    ],
+    image: "trainers/women1.jpg",
   },
   {
     name: "Daniel Lee",
     yearsExperience: 8,
-    specializations: ["CrossFit", "Strength Training", "Athletic Conditioning"],
-    image: "../assets/trainers/men6.jpg",
+    specializations: [
+      sharedSpecializations[1],
+      sharedSpecializations[2],
+      sharedSpecializations[3],
+    ],
+    image: "trainers/men6.jpg",
   },
 ];
 
