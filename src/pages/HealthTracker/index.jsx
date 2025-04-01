@@ -1,7 +1,7 @@
 const HealthTracker = () => {
   return (
     <>
-      <p>Health Tracker</p>
+      <p className="pageHeader">Health Tracker</p>
     </>
   );
 };

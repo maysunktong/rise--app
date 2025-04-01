@@ -23,14 +23,3 @@
 .book:hover {
   background-color: #418aff;
 }
-
-.filter {
-  background-color: rgb(255, 255, 255);
-  color: gray;
-  border: dotted 2px rgb(202, 202, 202);
-}
-
-.filter:hover {
-  background-color:#32cbb9;
-  color: white;
-}
