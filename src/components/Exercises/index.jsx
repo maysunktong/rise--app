@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "./exercises.module.css";
 
 const Exercises = () => {
   const [bodyPartList, setBodyPartList] = useState([]);
@@ -10,7 +11,7 @@ const Exercises = () => {
       method: "GET",
       headers: {
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB,
+        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB_KEY,
       },
     })
       .then((response) => response.json())
@@ -31,7 +32,7 @@ const Exercises = () => {
       method: "GET",
       headers: {
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB,
+        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB_KEY,
       },
     })
       .then((response) => response.json())
@@ -67,10 +68,17 @@ const Exercises = () => {
       </ul>
 
       <h1>Exercises</h1>
-      <ul>
+      <ul className={styles.cardsContainer}>
         {exerciseList.length > 0 ? (
           exerciseList.map((exercise, index) => (
-            <li key={index}>{exercise.name}</li>
+            <li key={index} className={styles.trainerCard}>
+              <div className={styles.imageContainer}>
+                <img src="../../../public/assets/gym/exercise.jpg" alt="" width={100} />
+              </div>
+              <div className={styles.details}>
+                <h2>{exercise.name}</h2>
+              </div>
+            </li>
           ))
         ) : (
           <li>No exercises found</li>
