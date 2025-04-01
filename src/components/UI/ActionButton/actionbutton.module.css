@@ -14,14 +14,23 @@
   background-color: #a2afad;
 }
 
-.actionButton:active {
-  background-color: #1bc7b3;
-}
 
+/* Types of button */
 .book {
   background-color: rgb(173, 173, 173);
 }
 
 .book:hover {
-  background-color: #2a9d8f;
+  background-color: #418aff;
+}
+
+.filter {
+  background-color: rgb(255, 255, 255);
+  color: gray;
+  border: dotted 2px rgb(202, 202, 202);
+}
+
+.filter:hover {
+  background-color:#32cbb9;
+  color: white;
 }

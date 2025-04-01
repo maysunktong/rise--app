@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ActionButton from "../UI/ActionButton/ActionButton";
 import styles from "./exercises.module.css";
 
 const Exercises = () => {
@@ -57,11 +58,20 @@ const Exercises = () => {
           ))}
         </select>
       } */}
-
-      <ul>
-        <li onClick={() => setSelectedBodyPart("")}>All exercisees</li>
+      <h1 className="pageHeader">Workout Room</h1>
+      <ul className={styles.filtersList}>
+        <li
+          className={selectedBodyPart === "" ? styles.active : styles.actionButton}
+          onClick={() => setSelectedBodyPart("")}
+        >
+          All exercises
+        </li>
         {bodyPartList.map((bodyPart, index) => (
-          <li key={index} onClick={() => setSelectedBodyPart(bodyPart)}>
+          <li
+            key={index}
+            className={selectedBodyPart === bodyPart ? styles.active : styles.actionButton}
+            onClick={() => setSelectedBodyPart(bodyPart)}
+          >
             {bodyPart}
           </li>
         ))}
