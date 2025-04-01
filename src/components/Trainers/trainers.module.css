@@ -14,6 +14,11 @@
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.trainerCard:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .imageContainer {
@@ -29,7 +34,6 @@
 
 .details {
   padding: 15px;
-  background-color: #fff;
   text-align: center;
 }
 

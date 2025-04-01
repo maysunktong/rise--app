@@ -1,7 +1,6 @@
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   gap: 1rem;
   padding: 1rem;
   width: 100%;
@@ -9,11 +8,16 @@
 
 .trainerCard {
   width: 300px;
-  height: fit-content;
+  height: auto;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.trainerCard:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .imageContainer {
@@ -29,8 +33,9 @@
 
 .details {
   padding: 15px;
-  background-color: #fff;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .details h2 {
