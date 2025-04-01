@@ -16,7 +16,7 @@ const TrainersData = [
       sharedSpecializations[4],
       sharedSpecializations[5],
     ],
-    image: "trainers/women2.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534408/rise-app/user_e95nju.jpg",
   },
   {
     name: "Benjamin Wilson",
@@ -26,7 +26,7 @@ const TrainersData = [
       sharedSpecializations[1],
       sharedSpecializations[4],
     ],
-    image: "trainers/men3.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534612/rise-app/Guy_in_Green_Shirt_yryzuj.jpg",
   },
   {
     name: "Alexander Taylor",
@@ -36,7 +36,7 @@ const TrainersData = [
       sharedSpecializations[3],
       sharedSpecializations[5],
     ],
-    image: "trainers/men4.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534609/rise-app/Smiling_Man_Portrait_fau6pb.jpg",
   },
   {
     name: "Olivia Smith",
@@ -46,7 +46,7 @@ const TrainersData = [
       sharedSpecializations[2],
       sharedSpecializations[4],
     ],
-    image: "trainers/women3.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534406/rise-app/men3_cyiu3d.jpg",
   },
   {
     name: "Isabella Davis",
@@ -56,7 +56,7 @@ const TrainersData = [
       sharedSpecializations[3],
       sharedSpecializations[5],
     ],
-    image: "trainers/women4.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534398/rise-app/women2_kglg2q.jpg",
   },
   {
     name: "James Anderson",
@@ -66,7 +66,7 @@ const TrainersData = [
       sharedSpecializations[2],
       sharedSpecializations[3],
     ],
-    image: "trainers/men1.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534969/rise-app/Man_Wearing_White_Shirt_hva0ou.jpg",
   },
   {
     name: "William Brown",
@@ -76,7 +76,7 @@ const TrainersData = [
       sharedSpecializations[3],
       sharedSpecializations[5],
     ],
-    image: "trainers/men2.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534401/rise-app/men6_yiedbk.jpg",
   },
 
   {
@@ -87,7 +87,7 @@ const TrainersData = [
       sharedSpecializations[4],
       sharedSpecializations[5],
     ],
-    image: "trainers/men5.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534396/rise-app/men4_ojzsfx.jpg",
   },
   {
     name: "Emma Johnson",
@@ -97,17 +97,17 @@ const TrainersData = [
       sharedSpecializations[1],
       sharedSpecializations[2],
     ],
-    image: "trainers/women1.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534396/rise-app/women4_kws1f9.jpg",
   },
   {
-    name: "Daniel Lee",
+    name: "Daniela Lee",
     yearsExperience: 8,
     specializations: [
       sharedSpecializations[1],
       sharedSpecializations[2],
       sharedSpecializations[3],
     ],
-    image: "trainers/men6.jpg",
+    image: "https://res.cloudinary.com/maysunktong/image/upload/v1743534395/rise-app/women1_aezjeh.jpg",
   },
 ];
 

@@ -71,7 +71,11 @@ const Exercises = () => {
           exerciseList.map((exercise, index) => (
             <li key={index} className={styles.trainerCard}>
               <div className={styles.imageContainer}>
-                <img src="https://res.cloudinary.com/maysunktong/image/upload/v1743534429/rise-app/exercise_r0aypk.jpg" alt="" width={100} />
+                <img
+                  src="https://res.cloudinary.com/maysunktong/image/upload/v1743534429/rise-app/exercise_r0aypk.jpg"
+                  alt="exercise cover photo"
+                  width={100}
+                />
               </div>
               <div className={styles.details}>
                 <h3>{exercise.name}</h3>

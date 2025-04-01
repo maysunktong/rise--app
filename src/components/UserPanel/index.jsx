@@ -1,4 +1,4 @@
-import UserImg from "../../../public/assets/user/user.jpg";
+import UserImg from "../../../public/assets/user/user.svg";
 import styles from "./userModal.module.css";
 
 const UserPanel = () => {

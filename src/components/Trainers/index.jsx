@@ -9,7 +9,7 @@ const Trainers = () => {
         <li key={index} className={styles.trainerCard}>
           <div className={styles.imageContainer}>
             <img
-              src={`../../../public/assets/${trainer.image}`}
+              src={trainer.image}
               alt=""
               width={100}
             />
