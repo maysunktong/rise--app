@@ -1,8 +1,10 @@
+import Trainers from "../../components/Trainers";
+
 const BookTrainers = () => {
   return (
-    <>
-      <p>Book Trainers</p>
-    </>
+    <div>
+      <Trainers />
+    </div>
   );
 };
 export default BookTrainers;

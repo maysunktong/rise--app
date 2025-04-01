@@ -1,13 +1,10 @@
-import Exercise from '../../components/Exercise';
+import Exercises from "../../components/Exercises";
 
 const WorkoutRoom = () => {
   return (
-    <>
-      <p>Workout Room</p>
-      <div>
-        <Exercise />
-      </div>
-    </>
+    <div>
+      <Exercises />
+    </div>
   );
 };
 export default WorkoutRoom;
