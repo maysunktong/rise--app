@@ -1,11 +1,15 @@
 .cardsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cardsList {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  width: 100%;
-
+  width: 90%;
 }
 
 .trainerCard {
@@ -36,6 +40,7 @@
 .details {
   padding: 15px;
   text-align: center;
+  height: 100%;
 }
 
 .details h2 {

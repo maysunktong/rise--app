@@ -1,9 +1,15 @@
 .cardsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cardsList{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
 }
 
 .trainerCard {
@@ -37,6 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .details h2 {

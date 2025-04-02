@@ -1,101 +1,38 @@
-import { useEffect, useState } from "react";
+import ExercisesData from "../../data/exercises";
 import ActionButton from "../UI/ActionButton/ActionButton";
 import styles from "./exercises.module.css";
 
+const SportImageLinks = [
+  "https://res.cloudinary.com/maysunktong/image/upload/v1743536315/rise-app/Person_with_Barbell_evnya2.jpg",
+  "https://res.cloudinary.com/maysunktong/image/upload/v1743593575/rise-app/Sporty_Woman_Abs_Exercises_vmjnaq.jpg",
+  "https://res.cloudinary.com/maysunktong/image/upload/v1743593574/rise-app/Bodybuilder_Exercises_with_Rubber_Band_nofspw.jpg",
+  "https://res.cloudinary.com/maysunktong/image/upload/v1743534429/rise-app/exercise_r0aypk.jpg",
+];
+
+const getRandomImage = () => {
+  return SportImageLinks[Math.floor(Math.random() * SportImageLinks.length)];
+};
+
 const Exercises = () => {
-  const [bodyPartList, setBodyPartList] = useState([]);
-  const [exerciseList, setExerciseList] = useState([]);
-  const [selectedBodyPart, setSelectedBodyPart] = useState("");
-
-  useEffect(() => {
-    fetch("https://exercisedb.p.rapidapi.com/exercises/bodyPartList", {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB_KEY,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) =>
-        Array.isArray(data)
-          ? setBodyPartList(data)
-          : console.error("Invalid body part list data", data)
-      )
-      .catch((error) => console.error("Error fetching body part list:", error));
-  }, []);
-
-  useEffect(() => {
-    const url = selectedBodyPart
-      ? `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${selectedBodyPart}?limit=20`
-      : "https://exercisedb.p.rapidapi.com/exercises?limit=20";
-
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-        "X-RapidAPI-Key": import.meta.env.VITE_EXERCISEDB_KEY,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) =>
-        Array.isArray(data)
-          ? setExerciseList(data)
-          : console.error("Invalid exercises data", data)
-      )
-      .catch((error) => console.error("Error fetching exercises:", error));
-  }, [selectedBodyPart]);
-
   return (
     <div>
-      {/* mobile filter */}
-      {/* {
-        <select onChange={(e) => setSelectedBodyPart(e.target.value)}>
-          <option value="">All Exercises</option>
-          {bodyPartList.map((bodyPart, index) => (
-            <option key={index} value={bodyPart}>
-              {bodyPart}
-            </option>
-          ))}
-        </select>
-      } */}
       <h1 className="pageHeader">Workout Room</h1>
-      <ul className={styles.filtersList}>
-        <li
-          className={selectedBodyPart === "" ? styles.active : styles.actionButton}
-          onClick={() => setSelectedBodyPart("")}
-        >
-          All exercises
-        </li>
-        {bodyPartList.map((bodyPart, index) => (
-          <li
-            key={index}
-            className={selectedBodyPart === bodyPart ? styles.active : styles.actionButton}
-            onClick={() => setSelectedBodyPart(bodyPart)}
-          >
-            {bodyPart}
-          </li>
-        ))}
-      </ul>
-      <ul className={styles.cardsContainer}>
-        {exerciseList.length > 0 ? (
-          exerciseList.map((exercise, index) => (
+      <div className={styles.cardsContainer}>
+        <ul className={styles.cardsList}>
+          {ExercisesData.map((exercise, index) => (
             <li key={index} className={styles.trainerCard}>
               <div className={styles.imageContainer}>
-                <img
-                  src="https://res.cloudinary.com/maysunktong/image/upload/v1743534429/rise-app/exercise_r0aypk.jpg"
-                  alt="exercise cover photo"
-                  width={100}
-                />
+                <img src={getRandomImage()} alt="Exercise" width={100} />
               </div>
               <div className={styles.details}>
-                <h3>{exercise.name}</h3>
+                <h2>{exercise.name}</h2>
+                <p>Focus: {exercise.muscle}</p>
+                <ActionButton action="book">Book now</ActionButton>
               </div>
             </li>
-          ))
-        ) : (
-          <li>No exercises found</li>
-        )}
-      </ul>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
