@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <h1 className="pageHeader">Dashboard</h1>
-      <div>
+      <div className={styles.cardsContainer}>
         <HealthWidget />
       </div>
     </>
