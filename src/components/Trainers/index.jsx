@@ -1,4 +1,4 @@
-import TrainersData from "../../data/trainers";
+import { Specializations, TrainersData } from "../../data/trainers";
 import ActionButton from "../UI/ActionButton/ActionButton";
 import styles from "./trainers.module.css";
 
@@ -7,6 +7,11 @@ const Trainers = () => {
     <div>
       <h1 className="pageHeader">Fitness Trainers</h1>
       <div className={styles.cardsContainer}>
+        <ul>
+          {Specializations.map((type, index) => (
+            <li>{type}</li>
+          ))}
+        </ul>
         <ul className={styles.cardsList}>
           {TrainersData.map((trainer, index) => (
             <li key={index} className={styles.trainerCard}>

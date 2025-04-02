@@ -1,4 +1,3 @@
-import SubscriptionWidget from "../SubscriptionWidget";
 import TrainerWidget from "../TrainerWidget";
 import UserPanel from "../UserPanel";
 import Banner from "./Banner";
