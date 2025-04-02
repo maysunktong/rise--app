@@ -27,8 +27,6 @@ const HealthWidget = () => {
       <WidgetCard value={sleepCount} category={"sleep"} />
       <WidgetCard value={coffeeCount} category={"coffee"} />
       <WidgetCard value={waterCount} category={"water"} />
-      <WidgetCard value={waterCount} category={"bmi"} />
-      <WidgetCard value={waterCount} category={"weight"} />
     </div>
   );
 };

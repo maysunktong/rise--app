@@ -17,7 +17,7 @@
 
 .dashboardMenu {
   display: grid;
-  grid-template-rows: 1fr 2fr 2fr 2fr;
+  grid-template-rows: 1fr 2fr 3fr;
   max-width: 300px;
   height: 90vh;
 }

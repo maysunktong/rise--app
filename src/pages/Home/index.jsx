@@ -1,5 +1,5 @@
 import HealthWidget from "../../components/HealthWidget";
-import styles from "./home.module.css"
+import styles from "./home.module.css";
 
 const Home = () => {
   return (
