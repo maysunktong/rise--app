@@ -16,7 +16,6 @@ const Layout = ({ children, setCurrentPage }) => {
             <UserPanel />
             <Navigation setCurrentPage={setCurrentPage} />
             <TrainerWidget />
-            <SubscriptionWidget />
           </div>
           <div className={styles.content}>{children}</div>
         </div>
