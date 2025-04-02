@@ -1,11 +1,13 @@
 import HealthWidget from "../../components/HealthWidget";
-import GetRandomImage from "../../utils/GetRandomImage";
+import styles from "./home.module.css"
 
 const Home = () => {
   return (
     <>
       <h1 className="pageHeader">Dashboard</h1>
-      <HealthWidget />
+      <div className={styles.cardsContainer}>
+        <HealthWidget />
+      </div>
     </>
   );
 };
