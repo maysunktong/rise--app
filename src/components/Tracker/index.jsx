@@ -2,9 +2,9 @@ import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import { FaGlassWater } from "react-icons/fa6";
 import { PiCoffeeBeanFill } from "react-icons/pi";
-import MoodPicker from "../utils/MoodPicker";
-import RatingBar from "../utils/RatingBar";
-import Slider from "../utils/Slider";
+import MoodPicker from "../MoodPicker";
+import RatingBar from "../RatingBar";
+import Slider from "../Slider";
 import styles from "./tracker.module.css";
 
 const Tracker = () => {
@@ -30,13 +30,15 @@ const Tracker = () => {
 
   const onAddList = () => {
     if (text.trim() !== "") {
-      const newList = {
+      const newEntry = {
         text,
         waterCount,
         coffeeCount,
         stepCount,
         sleepCount,
         selectedMood,
+        date: format(new Date(), "MMMM dd"), // Save date
+        time: format(new Date(), "HH:mm"), // Save time
       };
 
       setText("");
@@ -46,9 +48,9 @@ const Tracker = () => {
       setSleepCount(0);
       setSelectedMood("🫥");
 
-      const updatedList = [newList, ...list];
+      const updatedList = [newEntry, ...list];
       setList(updatedList);
-      localStorage.setItem("trackerList", JSON.stringify(updatedList));
+      localStorage.setItem("trackerList", JSON.stringify(updatedList)); // Save to localStorage
 
       setIsTrackerOpen(false);
     }
@@ -178,10 +180,10 @@ const Tracker = () => {
               <section className={styles.summarySection}>
                 <div className={styles.summaryHeader}>
                   <p className={styles.summaryTitle}>
-                    {selectedMood} Daily Health Summary: 
+                    {selectedMood} Daily Health Summary:
                   </p>
                   <p className={styles.summaryDateTime}>
-                    {date} {time}
+                    {list[index].date} {list[index].time}
                   </p>
                 </div>
                 <p className={styles.summaryText}>{text}</p>

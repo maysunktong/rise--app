@@ -1,7 +1,10 @@
+import Tracker from '../../components/Tracker';
+
 const HealthTracker = () => {
   return (
     <>
-      <p className="pageHeader">Health Tracker</p>
+      <h1 className="pageHeader">Health Tracker</h1>
+      <Tracker />
     </>
   );
 };

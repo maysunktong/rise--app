@@ -1,7 +1,7 @@
-import WidgetData from "../../../data/widget";
+import WidgetData from "../../data/widget";
 import styles from "./healthCard.module.css";
 
-const WidgetCard = ({ value, category}) => {
+const WidgetCard = ({ value, category }) => {
   const widget = WidgetData.find((item) => item.name === category);
 
   const unitMap = {

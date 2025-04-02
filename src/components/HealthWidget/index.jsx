@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import WidgetCard from "../utils/WidgetCard";
+import WidgetCard from "../WidgetCard";
 import styles from "./healthWidget.module.css";
 
 const HealthWidget = () => {
@@ -22,13 +22,15 @@ const HealthWidget = () => {
   }, []);
 
   return (
-    <div className={styles.healthWidget}>
-      <WidgetCard value={stepCount} category={"steps"} />
-      <WidgetCard value={sleepCount} category={"sleep"} />
-      <WidgetCard value={coffeeCount} category={"coffee"} />
-      <WidgetCard value={waterCount} category={"water"} />
-      <WidgetCard value={waterCount} category={"bmi"} />
-      <WidgetCard value={waterCount} category={"weight"} />
+    <div className={styles.healthWidgetContainer}>
+      <div className={styles.healthWidget}>
+        <WidgetCard value={stepCount} category={"steps"} />
+        <WidgetCard value={sleepCount} category={"sleep"} />
+        <WidgetCard value={coffeeCount} category={"coffee"} />
+        <WidgetCard value={waterCount} category={"water"} />
+        <WidgetCard value={waterCount} category={"bmi"} />
+        <WidgetCard value={waterCount} category={"weight"} />
+      </div>
     </div>
   );
 };
