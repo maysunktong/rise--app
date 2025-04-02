@@ -1,7 +1,9 @@
+import HealthWidget from '../../components/HealthWidget';
+
 const Home = () => {
   return (
     <>
-      <p>Home</p>
+      <HealthWidget />
     </>
   );
 };

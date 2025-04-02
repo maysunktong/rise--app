@@ -1,0 +1,5 @@
+.ratingItemWrapper {
+  display: flex;
+  justify-content: start;
+  align-content: center;
+}

@@ -1,0 +1,78 @@
+.trackerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.trackerContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.textField {
+  background-color: #f6f6f6;
+  color: black;
+  border: none;
+  width: 400px;
+  height: 100px;
+  padding: 2rem;
+  border-radius: 24px;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 1.2rem;
+}
+
+.trackerTextContainer{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.summaryList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.summarySection {
+  width: 50%;
+  line-height: 2rem;
+  border-bottom: solid 1px rgb(230, 231, 231);
+}
+
+.summaryHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.summaryTitle {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.summaryDateTime {
+  font-weight: 300;
+  color: rgb(174, 173, 173);
+}
+
+.summaryText {
+  border-radius: 12px;
+  background-color: #f0f0f0;
+  padding: 18px;
+}
+
+.summaryBottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summaryItemFlex {
+  display: flex;
+  gap: 12px;
+}

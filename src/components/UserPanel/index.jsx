@@ -8,7 +8,6 @@ const UserPanel = () => {
         <img src={UserImg} alt="user image" width={200} />
       </div>
       <p className={styles.userName}>Jane Donut</p>
-      <p>Membership</p>
     </div>
   );
 };
