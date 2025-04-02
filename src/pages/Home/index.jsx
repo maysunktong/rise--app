@@ -1,4 +1,5 @@
 import HealthWidget from "../../components/HealthWidget";
+import GetRandomImage from "../../utils/GetRandomImage";
 
 const Home = () => {
   return (

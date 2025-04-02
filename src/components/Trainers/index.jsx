@@ -21,7 +21,7 @@ const Trainers = () => {
                     <li key={idx}>{programme}</li>
                   ))}
                 </ul>
-                <ActionButton action="book">Book now</ActionButton>
+                <ActionButton action="trainer">Book now</ActionButton>
               </div>
             </li>
           ))}

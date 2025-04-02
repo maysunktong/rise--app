@@ -14,12 +14,32 @@
   background-color: #a2afad;
 }
 
-
 /* Types of button */
-.book {
+.trainer {
   background-color: rgb(173, 173, 173);
 }
 
-.book:hover {
+.trainer:hover {
   background-color: #418aff;
+}
+
+.workout {
+  background-color: #2a9d8f;
+}
+
+.workout:hover {
+  background-color: #107d71;
+}
+
+.readmore {
+  background-color: white;
+  border: none;
+  color: gainsboro;
+}
+
+.readmore:hover {
+  background-color: white;
+  border: none;
+  color: gray;
+  text-decoration: underline;
 }
