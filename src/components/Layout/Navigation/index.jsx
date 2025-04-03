@@ -21,19 +21,19 @@ const Navigation = ({ setCurrentPage }) => {
         className={activePage === "healthTracker" ? styles.active : ""}
         onClick={() => handleNavClick("healthTracker", <HealthTracker />)}
       >
-        <IoFitnessOutline /> Health Tracker
+        <IoFitnessOutline size={32} /> Health Tracker
       </li>
       <li
         className={activePage === "workoutRoom" ? styles.active : ""}
         onClick={() => handleNavClick("workoutRoom", <WorkoutRoom />)}
       >
-        <LiaDumbbellSolid /> Workout Room
+        <LiaDumbbellSolid size={32} /> Workout Room
       </li>
       <li
         className={activePage === "bookTrainers" ? styles.active : ""}
         onClick={() => handleNavClick("bookTrainers", <BookTrainers />)}
       >
-        <FaRunning /> Book Trainers
+        <FaRunning size={32} /> Book Trainers
       </li>
     </ul>
   );

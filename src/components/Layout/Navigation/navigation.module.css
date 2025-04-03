@@ -30,7 +30,7 @@
   }
 }
 
-@media (min-width: 550px) {
+@media (max-width: 850px) {
   .cardsList {
     grid-template-columns: repeat(3, 1fr);
     width: 90%;
@@ -38,6 +38,8 @@
 
   .navigationLists li {
     font-size: 1.1rem;
+    flex-direction: column;
+    text-align: center;
   }
 }
 
