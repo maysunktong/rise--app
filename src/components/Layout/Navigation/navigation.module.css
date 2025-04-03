@@ -1,5 +1,6 @@
 .navigationLists {
   width: 100%;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -33,6 +34,10 @@
   .cardsList {
     grid-template-columns: repeat(3, 1fr);
     width: 90%;
+  }
+
+  .navigationLists li {
+    font-size: 1.1rem;
   }
 }
 

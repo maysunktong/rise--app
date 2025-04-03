@@ -4,6 +4,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 1rem;
+  margin: auto;
 }
 
 @media (max-width: 320px) {
@@ -13,7 +14,7 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 850px) {
   .healthWidget {
     grid-template-columns: repeat(2, 1fr);
     width: 90%;
