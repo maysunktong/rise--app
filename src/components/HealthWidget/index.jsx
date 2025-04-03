@@ -7,9 +7,8 @@ const HealthWidget = () => {
   const [coffeeCount, setCoffeeCount] = useState("--");
   const [stepCount, setStepCount] = useState("--");
   const [sleepCount, setSleepCount] = useState("--");
-  const [selectedMood, setSelectedMood] = useState("--");
 
-  useEffect(() => {
+  const loadData = () => {
     const storedData = JSON.parse(localStorage.getItem("trackerList")) || [];
     if (storedData.length > 0) {
       const latestItem = storedData[0];
@@ -17,8 +16,18 @@ const HealthWidget = () => {
       setCoffeeCount(latestItem.coffeeCount || 0);
       setStepCount(latestItem.stepCount || 0);
       setSleepCount(latestItem.sleepCount || 0);
-      setSelectedMood(latestItem.selectedMood || null);
     }
+  };
+
+  useEffect(() => {
+    loadData(); 
+
+    const handleTrackerUpdate = () => {
+      loadData(); 
+    };
+
+    window.addEventListener("trackerListUpdated", handleTrackerUpdate);
+    return () => window.removeEventListener("trackerListUpdated", handleTrackerUpdate);
   }, []);
 
   return (

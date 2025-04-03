@@ -27,3 +27,22 @@
   height: 100%;
   padding: 2rem;
 }
+
+
+@media (max-width: 320px) {
+  .dashboardMenu {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .dashboardMenu {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .dashboardMenu {
+    display: block;
+  }
+}

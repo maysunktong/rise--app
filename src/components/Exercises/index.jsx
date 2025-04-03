@@ -15,10 +15,7 @@ const Exercises = () => {
             <div className={styles.details}>
               <h2>{exercise.name}</h2>
               <p>Focus: {exercise.muscle}</p>
-              <div className={styles.buttonWrapper}>
-                <ActionButton action="readmore">Read more</ActionButton>
-                <ActionButton action="workout">Book now</ActionButton>
-              </div>
+              <ActionButton action="readmore">Read more</ActionButton>
             </div>
           </li>
         ))}

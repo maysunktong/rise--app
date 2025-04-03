@@ -1,0 +1,12 @@
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonWrapper {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

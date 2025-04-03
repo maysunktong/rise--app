@@ -52,6 +52,8 @@ const Tracker = () => {
       setList(updatedList);
       localStorage.setItem("trackerList", JSON.stringify(updatedList));
 
+      window.dispatchEvent(new Event("trackerListUpdated"));
+
       setIsTrackerOpen(false);
     }
   };

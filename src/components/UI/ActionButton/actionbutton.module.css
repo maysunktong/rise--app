@@ -8,6 +8,8 @@
   font-size: 16px;
   transition: background-color 0.3s;
   margin: 0.5rem 0;
+  min-width: 120px;
+  height: fit-content;
 }
 
 .actionButton:hover {

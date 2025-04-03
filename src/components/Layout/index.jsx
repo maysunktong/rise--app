@@ -1,4 +1,3 @@
-import TrainerWidget from "../TrainerWidget";
 import UserPanel from "../UserPanel";
 import Banner from "./Banner";
 import Footer from "./Footer";
@@ -14,7 +13,6 @@ const Layout = ({ children, setCurrentPage }) => {
           <div className={styles.dashboardMenu}>
             <UserPanel />
             <Navigation setCurrentPage={setCurrentPage} />
-            <TrainerWidget />
           </div>
           <div className={styles.content}>{children}</div>
         </div>
