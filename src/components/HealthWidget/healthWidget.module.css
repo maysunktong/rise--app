@@ -13,9 +13,3 @@
     width: 100%;
   }
 }
-
-@media (min-width: 900px) {
-  .healthWidget {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
