@@ -10,3 +10,11 @@
   align-items: center;
   gap: 1rem;
 }
+
+@media (max-width: 450px) {
+  .headerWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

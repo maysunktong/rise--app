@@ -44,3 +44,9 @@ a {
   transition: background-color 0.3s;
   margin: 0.5rem 0;
 }
+
+@media (max-width: 450px) {
+  .pageHeader {
+   text-align: center;
+  }
+}

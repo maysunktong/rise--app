@@ -2,22 +2,3 @@
   text-align: center;
   padding: 1rem 0;
 }
-
-
-@media (max-width: 320px) {
-  .bannerImg {
-    display: none;
-  }
-}
-
-@media (max-width: 550px) {
-  .bannerImg {
-    display: none;
-  }
-}
-
-@media (min-width: 900px) {
-  .dashboardMenu {
-    display: block;
-  }
-}

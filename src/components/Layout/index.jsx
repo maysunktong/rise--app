@@ -6,17 +6,23 @@ import Navigation from "./Navigation";
 
 const Layout = ({ children, setCurrentPage }) => {
   return (
-    <div className={styles.dashboard}>
-      <Banner />
-      <div className={styles.dashboardWrapper}>
-        <div className={styles.dashboardContent}>
-          <div className={styles.dashboardMenu}>
-            <UserPanel />
-            <Navigation setCurrentPage={setCurrentPage} />
+    <div>
+      <div className={styles.dashboard}>
+        <div className={styles.dashboardWrapper}>
+          <div className={styles.dashboardContent}>
+            <div className={styles.dashboardMenu}>
+              <Banner />
+              <UserPanel />
+              <Navigation setCurrentPage={setCurrentPage} />
+            </div>
+            <div className={styles.content}>{children}</div>
           </div>
-          <div className={styles.content}>{children}</div>
+          <Footer />
         </div>
-        <Footer />
+      </div>
+      <div className={styles.dashboardMobile}>
+        {children}
+        <Navigation setCurrentPage={setCurrentPage} />
       </div>
     </div>
   );

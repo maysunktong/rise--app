@@ -16,26 +16,50 @@ const Navigation = ({ setCurrentPage }) => {
   };
 
   return (
-    <ul className={styles.navigationLists}>
-      <li
-        className={activePage === "healthTracker" ? styles.active : ""}
-        onClick={() => handleNavClick("healthTracker", <HealthTracker />)}
-      >
-        <IoFitnessOutline size={32} /> Health Tracker
-      </li>
-      <li
-        className={activePage === "workoutRoom" ? styles.active : ""}
-        onClick={() => handleNavClick("workoutRoom", <WorkoutRoom />)}
-      >
-        <LiaDumbbellSolid size={32} /> Workout Room
-      </li>
-      <li
-        className={activePage === "bookTrainers" ? styles.active : ""}
-        onClick={() => handleNavClick("bookTrainers", <BookTrainers />)}
-      >
-        <FaRunning size={32} /> Book Trainers
-      </li>
-    </ul>
+    <div>
+      <ul className={styles.navigationLists}>
+        <li
+          className={activePage === "healthTracker" ? styles.active : ""}
+          onClick={() => handleNavClick("healthTracker", <HealthTracker />)}
+        >
+          <IoFitnessOutline size={32} /> Health Tracker
+        </li>
+        <li
+          className={activePage === "workoutRoom" ? styles.active : ""}
+          onClick={() => handleNavClick("workoutRoom", <WorkoutRoom />)}
+        >
+          <LiaDumbbellSolid size={32} /> Workout Room
+        </li>
+        <li
+          className={activePage === "bookTrainers" ? styles.active : ""}
+          onClick={() => handleNavClick("bookTrainers", <BookTrainers />)}
+        >
+          <FaRunning size={32} /> Book Trainers
+        </li>
+      </ul>
+      <div className={styles.navigationMobile}>
+        <ul className={styles.navMobileFlex}>
+          <li
+            className={activePage === "healthTracker" ? styles.active : ""}
+            onClick={() => handleNavClick("healthTracker", <HealthTracker />)}
+          >
+            <IoFitnessOutline size={32} />
+          </li>
+          <li
+            className={activePage === "workoutRoom" ? styles.active : ""}
+            onClick={() => handleNavClick("workoutRoom", <WorkoutRoom />)}
+          >
+            <LiaDumbbellSolid size={32} />
+          </li>
+          <li
+            className={activePage === "bookTrainers" ? styles.active : ""}
+            onClick={() => handleNavClick("bookTrainers", <BookTrainers />)}
+          >
+            <FaRunning size={32} />
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 };
 export default Navigation;
