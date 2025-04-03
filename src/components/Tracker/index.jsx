@@ -15,6 +15,7 @@ const Tracker = ({ list, setList }) => {
   const [sleepCount, setSleepCount] = useState(0);
   const [selectedMood, setSelectedMood] = useState("🫥");
   const [isTrackerOpen, setIsTrackerOpen] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const storedList = JSON.parse(localStorage.getItem("trackerList")) || [];
@@ -27,34 +28,51 @@ const Tracker = ({ list, setList }) => {
     }
   }, [list]);
 
-  const onAddList = () => {
-    if (text.trim() !== "") {
-      const newEntry = {
-        text,
-        waterCount,
-        coffeeCount,
-        stepCount,
-        sleepCount,
-        selectedMood,
-        date: format(new Date(), "MMMM dd"),
-        time: format(new Date(), "HH:mm"),
-      };
-
-      setText("");
-      setWaterCount(0);
-      setCoffeeCount(0);
-      setStepCount(0);
-      setSleepCount(0);
-      setSelectedMood("🫥");
-
-      const updatedList = [newEntry, ...list];
-      setList(updatedList);
-      localStorage.setItem("trackerList", JSON.stringify(updatedList));
-
-      window.dispatchEvent(new Event("trackerListUpdated"));
-
-      setIsTrackerOpen(false);
+  const validateInput = () => {
+    if (!selectedMood || !text.trim()) {
+      setError("Please select a mood and write something.");
+      return false;
     }
+    if (
+      waterCount === 0 &&
+      coffeeCount === 0 &&
+      stepCount === 0 &&
+      sleepCount === 0
+    ) {
+      setError("Please fill in at least one activity");
+      return false;
+    }
+    setError("");
+    return true;
+  };
+
+  const onAddList = () => {
+    if (!validateInput()) return;
+    const newEntry = {
+      text,
+      waterCount,
+      coffeeCount,
+      stepCount,
+      sleepCount,
+      selectedMood,
+      date: format(new Date(), "MMMM dd"),
+      time: format(new Date(), "HH:mm"),
+    };
+
+    setText("");
+    setWaterCount(0);
+    setCoffeeCount(0);
+    setStepCount(0);
+    setSleepCount(0);
+    setSelectedMood("🫥");
+
+    const updatedList = [newEntry, ...list];
+    setList(updatedList);
+    localStorage.setItem("trackerList", JSON.stringify(updatedList));
+
+    window.dispatchEvent(new Event("trackerListUpdated"));
+
+    setIsTrackerOpen(false);
   };
 
   const onClearItem = () => {
@@ -95,10 +113,11 @@ const Tracker = ({ list, setList }) => {
               type="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              placeholder="How are you today?"
+              placeholder="Click emoji to express your day."
               className={styles.textField}
             />
           </div>
+          {error && <p className={styles.errorMessage}>{error}</p>}
           <div className={styles.trackerContainer}>
             <div>
               <RatingBar
@@ -166,43 +185,44 @@ const Tracker = ({ list, setList }) => {
               <section className={styles.summarySection}>
                 <div className={styles.summaryHeader}>
                   <p className={styles.summaryTitle}>
-                    {selectedMood} Daily Health Summary:
+                    Today I feel {selectedMood}
                   </p>
                   <p className={styles.summaryDateTime}>
                     {list[index].date} {list[index].time}
                   </p>
                 </div>
-                <p className={styles.summaryText}>{text}</p>
+
                 <div className={styles.summaryBottom}>
-                  <div className={styles.summaryItemFlex}>
-                    <span>Water: </span>
-                    <RatingBar
-                      totalRatings={10}
-                      selectedRatings={waterCount}
-                      Icon={FaGlassWater}
-                      selectedColor="lightblue"
-                      defaultColor="gray"
-                    />
+                  <p>{text}</p>
+                  <div className={styles.summaryListFlex}>
+                    <div className={styles.summaryItemFlex}>
+                      <span>Water: </span>
+                      <RatingBar
+                        totalRatings={10}
+                        selectedRatings={waterCount}
+                        Icon={FaGlassWater}
+                        selectedColor="lightblue"
+                        defaultColor="gray"
+                      />
+                    </div>
+                    <div className={styles.summaryItemFlex}>
+                      <span>Coffee: </span>
+                      <RatingBar
+                        totalRatings={10}
+                        selectedRatings={coffeeCount}
+                        Icon={PiCoffeeBeanFill}
+                        selectedColor="brown"
+                        defaultColor="gray"
+                      />
+                    </div>
+                    <div>Sleep: {sleepCount} hrs</div>
+                    <div>Steps: {stepCount} steps</div>
                   </div>
-                  <div className={styles.summaryItemFlex}>
-                    <span>Coffee: </span>
-                    <RatingBar
-                      totalRatings={10}
-                      selectedRatings={coffeeCount}
-                      Icon={PiCoffeeBeanFill}
-                      selectedColor="brown"
-                      defaultColor="gray"
-                    />
-                  </div>
-
-                  <div>Sleep: {sleepCount} hrs</div>
-                  <div>Steps: {stepCount} steps</div>
                 </div>
-
-                <button type="button" onClick={() => onDeleteItem(index)}>
-                  Delete
-                </button>
               </section>
+              <button type="button" onClick={() => onDeleteItem(index)}>
+                Delete
+              </button>
             </li>
           )
         )}
