@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .trackerContainer {
@@ -71,11 +72,48 @@
   justify-content: space-between;
 }
 
-.summaryItemFlex, .buttonGroup {
+.summaryItemFlex,
+.buttonGroup {
   display: flex;
   gap: 12px;
 }
 
 .errorMessage {
   color: rgb(243, 158, 158);
+}
+
+@media (max-width: 550px) {
+  .cardsList {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+  }
+
+  .summaryListFlex {
+    flex-direction: column;
+  }
+
+  .summarySection {
+    width: 90%;
+  }
+}
+
+@media (max-width: 850px) {
+  .cardsList {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+
+  .summaryListFlex {
+    flex-direction: column;
+  }
+
+  .summarySection {
+    width: 90%;
+  }
+}
+
+@media (min-width: 900px) {
+  .cardsList {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
