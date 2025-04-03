@@ -57,17 +57,6 @@ const Tracker = ({ list, setList }) => {
     }
   };
 
-  const onClearList = () => {
-    setText("");
-    setWaterCount(0);
-    setCoffeeCount(0);
-    setStepCount(0);
-    setSleepCount(0);
-    setSelectedMood("🫥");
-    setList([]);
-    localStorage.removeItem("trackerList");
-  };
-
   const onClearItem = () => {
     setText("");
     setWaterCount(0);
@@ -156,7 +145,6 @@ const Tracker = ({ list, setList }) => {
           <button onClick={() => setIsTrackerOpen(false)} type="button">
             Close
           </button>
-          <button onClick={onClearList}>Clear everything</button>
           <button onClick={onClearItem}>Clear field</button>
         </div>
       )}
