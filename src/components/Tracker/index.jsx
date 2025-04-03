@@ -37,8 +37,8 @@ const Tracker = () => {
         stepCount,
         sleepCount,
         selectedMood,
-        date: format(new Date(), "MMMM dd"), // Save date
-        time: format(new Date(), "HH:mm"), // Save time
+        date: format(new Date(), "MMMM dd"),
+        time: format(new Date(), "HH:mm"),
       };
 
       setText("");
@@ -50,7 +50,7 @@ const Tracker = () => {
 
       const updatedList = [newEntry, ...list];
       setList(updatedList);
-      localStorage.setItem("trackerList", JSON.stringify(updatedList)); // Save to localStorage
+      localStorage.setItem("trackerList", JSON.stringify(updatedList));
 
       setIsTrackerOpen(false);
     }

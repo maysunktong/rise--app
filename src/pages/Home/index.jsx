@@ -4,7 +4,7 @@ import styles from "./home.module.css";
 const Home = () => {
   return (
     <>
-      <h1 className="pageHeader">Dashboard</h1>
+      <h1 className="pageHeader">Today's streaks</h1>
       <div className={styles.cardsContainer}>
         <HealthWidget />
       </div>
