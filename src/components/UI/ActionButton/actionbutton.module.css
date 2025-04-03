@@ -10,6 +10,10 @@
   margin: 0.5rem 0;
   min-width: 120px;
   height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .actionButton:hover {
@@ -44,4 +48,23 @@
   border: none;
   color: gray;
   text-decoration: underline;
+}
+
+.erase {
+  background-color: white;
+  border: dotted 2px rgb(184, 184, 184);
+  color: gray;
+}
+
+.erase:hover {
+  background-color: rgb(184, 184, 184);
+  color: white;
+}
+
+.write {
+  background-color: #2a9d8f;
+}
+
+.write:hover {
+  background-color: #02c973;
 }
