@@ -7,8 +7,7 @@ import RatingBar from "../RatingBar";
 import Slider from "../Slider";
 import styles from "./tracker.module.css";
 
-const Tracker = () => {
-  const [list, setList] = useState([]);
+const Tracker = ({ list, setList }) => {
   const [text, setText] = useState("");
   const [waterCount, setWaterCount] = useState(0);
   const [coffeeCount, setCoffeeCount] = useState(0);
@@ -20,7 +19,7 @@ const Tracker = () => {
   useEffect(() => {
     const storedList = JSON.parse(localStorage.getItem("trackerList")) || [];
     setList(storedList);
-  }, []);
+  }, [setList]);
 
   useEffect(() => {
     if (list.length > 0) {
@@ -84,9 +83,6 @@ const Tracker = () => {
     setList(updatedList);
     localStorage.setItem("trackerList", JSON.stringify(updatedList));
   };
-
-  const date = format(new Date(), "MMMM dd");
-  const time = format(new Date(), "HH:mm");
 
   return (
     <div>
