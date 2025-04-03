@@ -6,6 +6,7 @@ import styles from "./healthtracker.module.css";
 
 const HealthTracker = () => {
   const [list, setList] = useState([]);
+  const [isTrackerOpen, setIsTrackerOpen] = useState(false);
 
   const loadData = () => {
     const storedData = JSON.parse(localStorage.getItem("trackerList")) || [];
@@ -19,6 +20,7 @@ const HealthTracker = () => {
   const onClearList = () => {
     setList([]);
     localStorage.removeItem("trackerList");
+    window.dispatchEvent(new Event("trackerListUpdated"));
   };
 
   return (
@@ -29,11 +31,20 @@ const HealthTracker = () => {
           <ActionButton action="erase" onClick={onClearList}>
             Erase all
           </ActionButton>
-          <ActionButton action="write">Write</ActionButton>
+          {!isTrackerOpen && (
+            <ActionButton action="write" onClick={() => setIsTrackerOpen(true)}>
+              Write
+            </ActionButton>
+          )}
         </div>
       </div>
       <HealthWidget />
-      <Tracker list={list} setList={setList} />
+      <Tracker
+        list={list}
+        setList={setList}
+        isTrackerOpen={isTrackerOpen}
+        setIsTrackerOpen={setIsTrackerOpen}
+      />
     </>
   );
 };

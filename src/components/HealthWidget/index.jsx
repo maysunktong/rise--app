@@ -16,18 +16,24 @@ const HealthWidget = () => {
       setCoffeeCount(latestItem.coffeeCount || 0);
       setStepCount(latestItem.stepCount || 0);
       setSleepCount(latestItem.sleepCount || 0);
+    } else {
+      setWaterCount("--");
+      setCoffeeCount("--");
+      setStepCount("--");
+      setSleepCount("--");
     }
   };
 
   useEffect(() => {
-    loadData(); 
+    loadData();
 
     const handleTrackerUpdate = () => {
-      loadData(); 
+      loadData();
     };
 
     window.addEventListener("trackerListUpdated", handleTrackerUpdate);
-    return () => window.removeEventListener("trackerListUpdated", handleTrackerUpdate);
+    return () =>
+      window.removeEventListener("trackerListUpdated", handleTrackerUpdate);
   }, []);
 
   return (

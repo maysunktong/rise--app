@@ -2,19 +2,20 @@ import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import { FaGlassWater } from "react-icons/fa6";
 import { PiCoffeeBeanFill } from "react-icons/pi";
+import { RiDeleteBin5Line } from "react-icons/ri";
 import MoodPicker from "../MoodPicker";
 import RatingBar from "../RatingBar";
 import Slider from "../Slider";
+import ActionButton from "../UI/ActionButton/ActionButton";
 import styles from "./tracker.module.css";
 
-const Tracker = ({ list, setList }) => {
+const Tracker = ({ list, setList, isTrackerOpen, setIsTrackerOpen }) => {
   const [text, setText] = useState("");
   const [waterCount, setWaterCount] = useState(0);
   const [coffeeCount, setCoffeeCount] = useState(0);
   const [stepCount, setStepCount] = useState(0);
   const [sleepCount, setSleepCount] = useState(0);
   const [selectedMood, setSelectedMood] = useState("🫥");
-  const [isTrackerOpen, setIsTrackerOpen] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -93,15 +94,6 @@ const Tracker = ({ list, setList }) => {
 
   return (
     <div>
-      {!isTrackerOpen && (
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
-          onClick={() => setIsTrackerOpen(true)}
-        >
-          Write a Post
-        </button>
-      )}
-
       {isTrackerOpen && (
         <div className={styles.trackerForm}>
           <div className={styles.trackerTextContainer}>
@@ -113,11 +105,10 @@ const Tracker = ({ list, setList }) => {
               type="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              placeholder="Click emoji to express your day."
+              placeholder="Click emoji and write a note"
               className={styles.textField}
             />
           </div>
-          {error && <p className={styles.errorMessage}>{error}</p>}
           <div className={styles.trackerContainer}>
             <div>
               <RatingBar
@@ -158,13 +149,21 @@ const Tracker = ({ list, setList }) => {
               />
             </div>
           </div>
-          <button onClick={onAddList} type="button">
-            Add
-          </button>
-          <button onClick={() => setIsTrackerOpen(false)} type="button">
-            Close
-          </button>
-          <button onClick={onClearItem}>Clear field</button>
+          {error && <p className={styles.errorMessage}>{error}</p>}
+          <div className={styles.buttonGroup}>
+            <ActionButton
+              onClick={() => setIsTrackerOpen(false)}
+              action="erase"
+            >
+              Close
+            </ActionButton>
+            <ActionButton onClick={onClearItem} action="erase">
+              Clear fields
+            </ActionButton>
+            <ActionButton onClick={onAddList} action="write">
+              Post
+            </ActionButton>
+          </div>
         </div>
       )}
 
@@ -220,9 +219,11 @@ const Tracker = ({ list, setList }) => {
                   </div>
                 </div>
               </section>
-              <button type="button" onClick={() => onDeleteItem(index)}>
-                Delete
-              </button>
+              <RiDeleteBin5Line
+                onClick={() => onDeleteItem(index)}
+                size={32}
+                color="lightgray"
+              />
             </li>
           )
         )}

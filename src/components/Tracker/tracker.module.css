@@ -71,7 +71,11 @@
   justify-content: space-between;
 }
 
-.summaryItemFlex {
+.summaryItemFlex, .buttonGroup {
   display: flex;
   gap: 12px;
+}
+
+.errorMessage {
+  color: rgb(243, 158, 158);
 }
