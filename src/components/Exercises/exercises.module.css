@@ -2,7 +2,13 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   padding: 1rem;
+}
+
+.cardsBody {
+  display: flex;
+  justify-content: center;
 }
 
 .cardsList {
