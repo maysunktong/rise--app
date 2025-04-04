@@ -6,7 +6,7 @@ import styles from "./healthtracker.module.css";
 
 const HealthTracker = () => {
   const [list, setList] = useState([]);
-  const [isTrackerOpen, setIsTrackerOpen] = useState(false);
+  const [isTrackerOpen, setIsTrackerOpen] = useState(true);
 
   const loadData = () => {
     const storedData = JSON.parse(localStorage.getItem("trackerList")) || [];
