@@ -48,5 +48,6 @@ a {
 @media (max-width: 450px) {
   .pageHeader {
    text-align: center;
+   padding: 12px;
   }
 }
