@@ -190,7 +190,6 @@ const Tracker = ({ list, setList, isTrackerOpen, setIsTrackerOpen }) => {
                     {list[index].date} {list[index].time}
                   </p>
                 </div>
-
                 <div className={styles.summaryBottom}>
                   <p>{text}</p>
                   <div className={styles.summaryListFlex}>

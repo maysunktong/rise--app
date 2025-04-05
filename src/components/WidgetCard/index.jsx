@@ -24,7 +24,7 @@ const WidgetCard = ({ value, category }) => {
       <div>
         {widget && (
           <div className={`${styles.widgetImageContainer} ${styles[category]}`}>
-            <img src={widget.image} alt={category} width={100} />
+            <img src={widget.image} alt={category} width={50} />
           </div>
         )}
       </div>

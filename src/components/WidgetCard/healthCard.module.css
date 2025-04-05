@@ -2,6 +2,7 @@
   color: #8b8c89;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 1rem;
   border-radius: 24px;
   width: 100%;
@@ -16,7 +17,7 @@
 }
 
 .widgetImageContainer {
-  width: 150px;
+  min-width: 60px;
   aspect-ratio: 1;
   border-radius: 50%;
   display: flex;
