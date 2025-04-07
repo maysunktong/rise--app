@@ -167,7 +167,7 @@ const Tracker = ({ list, setList, isTrackerOpen, setIsTrackerOpen }) => {
         </div>
       )}
 
-      <ul>
+      <ul className={styles.summaryContainer}>
         {list.map(
           (
             {

@@ -93,6 +93,14 @@
   .summarySection {
     width: 100%;
   }
+
+  .trackerForm {
+    margin-bottom: 4rem;
+  }
+
+  .summaryContainer {
+    margin-bottom: 3rem;
+  }
 }
 
 @media (min-width: 900px) {
